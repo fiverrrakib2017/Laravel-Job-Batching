@@ -17,8 +17,9 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('Upload');
 });
-Route::post('/upload',[SalesController::class,'store'])->name('upload');
+Route::post('/upload',[SalesController::class,'upload'])->name('upload');
 
+Route::get('/store-data',[SalesController::class,'store'])->name('store.data');
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
